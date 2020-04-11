@@ -3,8 +3,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 # load graph
-G = nx.read_gexf('subtiwiki_network.gexf')
-#G = nx.barabasi_albert_graph(3000, 2)
+G = nx.read_graphml('data/arrietta-orritz-delta6-genome-reduced.graphml')
 
 # extract degrees
 degree = [k[1] for k in G.degree()]
@@ -18,7 +17,7 @@ print('Number of nodes: {}'.format(len(degree)))
 print('Number of nonzero degree nodes: {0} ({1:.2f})'.format(len(nonzero), len(nonzero) / len(degree)))
 
 # calculate bins
-n_bins = 50
+n_bins = 20
 bins = np.logspace(np.log10(sorted_degree[0]), np.log10(sorted_degree[-1]), n_bins, base=10)
 counts, bin_edges = np.histogram(sorted_degree, bins)
 norm_counts = np.array(counts) / np.diff(np.array(bin_edges))
@@ -32,8 +31,8 @@ fig, ax = plt.subplots()
 ax.scatter(rev_bins[1:], ccdf)
 ax.set_xscale('log')
 ax.set_yscale('log')
-ax.set_ylim((10**-3, 10**5))
-ax.set_xlim((10**-0.1, 10**34))
+# ax.set_ylim((10**-3, 10**5))
+# ax.set_xlim((10**-0.1, 10**34))
 ax.set_xlabel(r'$\log{k}$')
 ax.set_ylabel(r'$\log{count}$')
 plt.savefig('degree_dist.png')

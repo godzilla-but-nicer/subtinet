@@ -2,7 +2,7 @@ import networkx as nx
 import pandas as pd
 
 # load graph and genes in delta6 genome
-G = nx.read_graphml('data/arrieta-orritz_data/Dataset_EV5/net.graphml')
+G = nx.read_graphml('data/net--child.graphml')
 delta6 = pd.read_csv('data/delta6_168_cds_matched.csv')
 # syntax for the locus tags is different for A-O network
 keep_genes = delta6['locus_tag.168'].str.replace('_', '')
@@ -18,4 +18,4 @@ for node in G.nodes(data=True):
 # drop em!
 G.remove_nodes_from(drop_genes)
 
-nx.write_graphml(G, 'data/arrietta-orritz-delta6-genome.graphml')
+nx.write_graphml(G, 'data/arrietta-orritz-delta6-genome-reduced.graphml')
