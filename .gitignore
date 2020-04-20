@@ -1,0 +1,6 @@
+*.png
+*.pdf
+*.gexf
+*.graphml
+data/DESeq2_output/
+
