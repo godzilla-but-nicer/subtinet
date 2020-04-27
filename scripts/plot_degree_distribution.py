@@ -17,7 +17,7 @@ print('Number of nodes: {}'.format(len(degree)))
 print('Number of nonzero degree nodes: {0} ({1:.2f})'.format(len(nonzero), len(nonzero) / len(degree)))
 
 # calculate bins
-n_bins = 20
+n_bins = 10
 bins = np.logspace(np.log10(sorted_degree[0]), np.log10(sorted_degree[-1]), n_bins, base=10)
 counts, bin_edges = np.histogram(sorted_degree, bins)
 norm_counts = np.array(counts) / np.diff(np.array(bin_edges))

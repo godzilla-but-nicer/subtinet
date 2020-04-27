@@ -26,7 +26,6 @@ for node in tqdm(G.nodes(data=True)):
         node[1]['locus_tag.d6'] = name_dict[node[1]['name']]
         # check if node is sporulation gene or not
         if node[1]['name'] in spor_set:
-            hits += 1
             node[1]['sporulation'] = 1
         else:
             node[1]['sporulation'] = 0
