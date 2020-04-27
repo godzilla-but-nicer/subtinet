@@ -1,0 +1,6 @@
+data/unused/
+data/delta6-networks/
+plots/*.png
+old-scripts/
+notes.txt
+.vscode

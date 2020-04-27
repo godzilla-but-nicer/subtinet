@@ -1,0 +1,6 @@
+rnaseq:
+  Goe3: 'data/significant-deseq2/Goe3_IPTG_vs_Goe3_NT.FDR_5.xlsx'
+  pDR110: 'data/significant-deseq2/pDR110_IPTG_vs_pDR110_NT.FDR_5.xlsx'
+  sigF: 'data/significant-deseq2/sigF_IPTG_vs_sigF_NT.FDR_5.xlsx'
+  sigG: 'data/significant-deseq2/sigG_IPTG_vs_sigG_NT.FDR_5.xlsx'
+  SP10: 'data/significant-deseq2/SP10_IPTG_vs_SP10_NT.FDR_5.xlsx'
